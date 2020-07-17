@@ -1,0 +1,26 @@
+{
+  "name": "handlebar_rolls",
+  "version": "1.0.0",
+  "description": "A sushi logger with MySQL, Node, Express, Handlebars and a homemade ORM (yum!). Aim is to follow the MVC design pattern; use Node and MySQL to query and route data in the app, and Handlebars to generate your HTML. No more Mr. Rice Guy!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Q118/handlebar_rolls.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Q118/handlebar_rolls/issues"
+  },
+  "homepage": "https://github.com/Q118/handlebar_rolls#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "mysql": "^2.18.1"
+  }
+}
