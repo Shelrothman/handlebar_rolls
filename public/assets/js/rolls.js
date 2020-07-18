@@ -2,7 +2,7 @@
 $(() => {
     $(".devour-button").on("click", function () {
       const id = $(this).data("id");
-      const newEat = $(this).data("newEat");
+      const newEat = $(this).data("neweat");
   
       const newEatState = { value: newEat };
   

@@ -19,7 +19,7 @@
             <ul>
               {{#each rolls}}
               {{#unless devoured}}
-              {{> rolls/roll-block devour=true}}
+              {{> rolls/roll-block devoured=true}}
               {{/unless}}
               {{/each}}
             </ul>
@@ -40,7 +40,7 @@
             <ul>
               {{#each rolls}}
               {{#if devoured}}
-              {{> rolls/roll-block devour=false}}  
+              {{> rolls/roll-block devoured=false}}  
               {{/if}}
               {{/each}}
             </ul>
