@@ -1,3 +1,9 @@
 body {
     background-image: url("background.jpg");
 }
+
+img {
+    border-color: black;
+    border-width: 7px;
+    border-style: groove;
+}
