@@ -1,29 +1,59 @@
 <!-- change to sushi info! -->
 
-<h1>Cats!</h1>
+<h1>Sushi Rolls!</h1>
 
-<img src="/assets/sushi.gif" alt="moving sushi"  width=250/>
+<img src="/assets/sushi.gif" alt="moving sushi" width=250 />
 
 
-<h2>Cats that are not sleepy!</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div class="card">
+        <div class="card-header">
+          <h2>Sushi rolls ready to devour!</h2>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">🍣🍱🍣🦪🍣🍤🍣</h5>
+          <div class="card-text">
+            <ul>
+              {{#each cats}}
+              {{#unless sleepy}}
+              {{> cats/cat-block sleep=true}}
+              {{/unless}}
+              {{/each}}
+            </ul>
+          </div>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="card">
+        <div class="card-header">
+          <h2>These Devoured Rolss Were <em>Soy</em> Yummy!</h2>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">🍣🍱🍣🦪🍣🍤🍣</h5>
+          <div class="card-text">
 
-<ul>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
+            <ul>
+              {{#each cats}}
+              {{#if sleepy}}
+              {{> cats/cat-block sleep=false}}
+              {{/if}}
+              {{/each}}
+            </ul>
+          </div>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<h2>Cats that are sleepy!</h2>
 
-<ul>
-  {{#each cats}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
-    {{/if}}
-  {{/each}}
-</ul>
+
+
 
 <h2>Add a Cat</h2>
 <form class="create-form">
