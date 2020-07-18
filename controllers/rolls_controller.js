@@ -20,7 +20,7 @@ router.get("/", (req, res) => {
 
 router.post("/api/rolls", (req, res) => {
 	roll.insertOne(
-		{ name: req.body.name, devoured: req.body.devoured },
+		{ name: req.body.roll_name, devoured: req.body.devoured },
 		(result) => {
 			// Send back the ID of the new roll
 			res.json({ id: result.insertId });
@@ -42,5 +42,19 @@ router.put("/api/rolls/:id/devoured", (req, res) => {
 		res.status(200).end();
 	});
 });
+
+
+router.delete("/api/rolls/:id", (req, res) => {
+	const condition = { id: req.params.id };
+  
+	roll.delete(condition, (result) => {
+	  if (result.affectedRows === 0) {
+		// If no rows were changed, then the ID must not exist, so 404
+		return res.status(404).end();
+	  } 
+	  res.status(200).end();
+	});
+  });
+  
 
 module.exports = router;
