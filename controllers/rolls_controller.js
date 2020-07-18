@@ -8,8 +8,6 @@ const sushi = require("../models/sushi.js");
 const router = express.Router();
 
 // Create all our routes and logic within them
-
-
 router.get("/", (req, res) => {
 	sushi.selectAll((data) => {
 		const hbsObject = {
@@ -21,10 +19,13 @@ router.get("/", (req, res) => {
 });
 
 router.post("/api/rolls", (req, res) => {
-	sushi.insertOne({ name: req.body.name, devoured: req.body.devoured }, (result) => {
-		// Send back the ID of the new roll
-		res.json({ id: result.insertId });
-	});
+	sushi.insertOne(
+		{ name: req.body.name, devoured: req.body.devoured },
+		(result) => {
+			// Send back the ID of the new roll
+			res.json({ id: result.insertId });
+		}
+	);
 });
 
 // using put to replace the value of devoured for a
@@ -41,7 +42,5 @@ router.put("/api/rolls/:id/devoured", (req, res) => {
 		res.status(200).end();
 	});
 });
-
-
 
 module.exports = router;
