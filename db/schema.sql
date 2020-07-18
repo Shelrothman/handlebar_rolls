@@ -13,10 +13,9 @@
 CREATE DATABASE sushi_db;
 USE sushi_db;
 
-CREATE TABLE rolls
-(
-	id int NOT NULL AUTO_INCREMENT,
-	roll_name  varchar(255) NOT NULL,
+CREATE TABLE rolls(
+	id int AUTO_INCREMENT NOT NULL,
+	roll_name varchar(255) NOT NULL,
 	devoured BOOLEAN DEFAULT false,
 	PRIMARY KEY (id)
 );
