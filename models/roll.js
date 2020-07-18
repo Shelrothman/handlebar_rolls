@@ -1,7 +1,7 @@
 const orm = require("../config/orm.js");
 
 
-const sushi = {
+const roll = {
     selectAll: (cb) => {
         orm.selectAll("rolls", (res) => {
             cb(res);
@@ -13,11 +13,11 @@ const sushi = {
             cb(res);
         });
     },
-    updateOne: (sushiData, criteria, cb) => {
-        orm.updateOne("rolls", sushiData, criteria, (res) => {
+    updateOne: (rollData, criteria, cb) => {
+        orm.updateOne("rolls", rollData, criteria, (res) => {
             cb(res);
         });
     },
 };
 
-module.exports = sushi;
+module.exports = roll;

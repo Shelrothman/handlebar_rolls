@@ -17,14 +17,14 @@
           <h5 class="card-title">🍣🍱🍣🦪🍣🍤🍣</h5>
           <div class="card-text">
             <ul>
-              {{#each cats}}
-              {{#unless sleepy}}
-              {{> cats/cat-block sleep=true}}
+              {{#each rolls}}
+              {{#unless devoured}}
+              {{> rolls/roll-block devoured=true}}
               {{/unless}}
               {{/each}}
             </ul>
           </div>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <button class="btn btn-primary">Devour it!</button>
         </div>
       </div>
     </div>
@@ -38,14 +38,14 @@
           <div class="card-text">
 
             <ul>
-              {{#each cats}}
-              {{#if sleepy}}
-              {{> cats/cat-block sleep=false}}
+              {{#each rolls}}
+              {{#if devoured}}
+              {{> rolls/roll-block devoured=false}}   <!--CHECK SYNTAX HERE -->
               {{/if}}
               {{/each}}
             </ul>
           </div>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+       
         </div>
       </div>
     </div>
