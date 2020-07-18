@@ -37,6 +37,19 @@ const orm = {
     });
   },
 
+  delete: (table, condition, cb) => {
+    const queryString = "DELETE FROM ?? WHERE ?";
+    const values = [table, condition];
+    connection.query(queryString, values, (err, result) => {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
+  },
+
+
+
 };
 
 module.exports = orm;
