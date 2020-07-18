@@ -19,7 +19,7 @@
             <ul>
               {{#each rolls}}
               {{#unless devoured}}
-              {{> rolls/roll-block devoured=true}}
+              {{> rolls/roll-block devour=true}}
               {{/unless}}
               {{/each}}
             </ul>
@@ -40,7 +40,7 @@
             <ul>
               {{#each rolls}}
               {{#if devoured}}
-              {{> rolls/roll-block devoured=false}}  
+              {{> rolls/roll-block devour=false}}  
               {{/if}}
               {{/each}}
             </ul>
@@ -59,7 +59,7 @@
       <form class="create-form">
         <div class="form-group">
           <label for="roll">Roll Name:</label>
-          <input type="text" id="rollId" name="roll" placeholder="yummy roll">
+          <input type="text" id="ro" name="name" placeholder="yummy roll">
         </div>
         <button type="submit">Add Roll</button>
       </form>

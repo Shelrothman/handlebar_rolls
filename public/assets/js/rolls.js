@@ -1,16 +1,16 @@
 // Make sure here that we wait to attach our handlers until the DOM is fully loaded.
 $(() => {
-    $(".change-sleep").on("click", function () {
+    $(".devour-button").on("click", function () {
       const id = $(this).data("id");
-      const newSleep = $(this).data("newsleep");
+      const newEat = $(this).data("newEat");
   
-      const newSleepState = { value: newSleep };
+      const newEatState = { value: newEat };
   
       // Send the PUT request.
-      $.ajax(`/api/cats/${id}/sleepy`, {
+      $.ajax(`/api/rolls/${id}/devoured`, {
         type: "PUT",
         // Convert object to JSON
-        data: JSON.stringify(newSleepState),
+        data: JSON.stringify(newEatState),
         // Tell the server that this request contains JSON
         contentType: "application/json; charset=UTF-8",
       }).then(() => {
@@ -23,26 +23,25 @@ $(() => {
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
   
-      const newCat = {
-        name: $("#ca").val().trim(),
-        sleepy: $("[name=sleepy]:checked").val().trim(),
+      const newRoll = {
+        roll_name: $("#ro").val().trim(),
       };
   
       // Send the POST request.
-      $.ajax("/api/cats", {
+      $.ajax("/api/rolls", {
         type: "POST",
-        data: newCat,
+        data: newRoll,
       }).then(() => {
         // Reload the page to get the updated list
         location.reload();
       });
     });
   
-    $(".delete-cat").on("click", function () {
+    $(".delete-roll").on("click", function () {
       const id = $(this).data("id");
   
       // Send the DELETE request.
-      $.ajax(`/api/cats/${id}`, {
+      $.ajax(`/api/rolls/${id}`, {
         type: "DELETE",
       }).then(() => {
         // Reload the page to get the updated list
