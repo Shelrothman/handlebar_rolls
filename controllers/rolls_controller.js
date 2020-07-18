@@ -20,7 +20,7 @@ router.get("/", (req, res) => {
 
 router.post("/api/rolls", (req, res) => {
 	roll.insertOne(
-		{ name: req.body.roll_name, devoured: req.body.devoured },
+		{ roll_name: req.body.roll_name, devoured: req.body.devoured },
 		(result) => {
 			// Send back the ID of the new roll
 			res.json({ id: result.insertId });
