@@ -1,6 +1,6 @@
 # Handlebar Rolls
 
-![](https://github.com/Q118/track_mysql_employees/blob/master/public/assets/sushi-app-screenshot.png)
+![](https://github.com/Q118/track_mysql_employees/blob/master//sushi-app-screenshot.png)
 
 A sushi logger with MySQL, Node, Express, Handlebars and a homemade ORM (yum!). Aim is to follow the MVC design pattern; use Node and MySQL to query and route data in the app, and Handlebars to generate my HTML.
 
